@@ -30,7 +30,7 @@ export type Props = {
   showOnStart?: boolean;
   sliderStyle?: CustomSliderStyle;
   toolbarStyle?: ViewStyle;
-  vertical?: boolean,
+  vertical?: boolean;
 };
 
 const MediaControls = (props: Props) => {
