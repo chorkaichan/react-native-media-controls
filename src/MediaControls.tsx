@@ -69,10 +69,6 @@ const MediaControls = (props: Props) => {
   const [opacity] = useState(new Animated.Value(initialOpacity));
   const [isVisible, setIsVisible] = useState(initialIsVisible);
 
-  useEffect(() => {
-    fadeOutControls(fadeOutDelay);
-  }, []);
-
   const fadeOutControls = (delay = 0) => {
     Animated.timing(opacity, {
       toValue: 0,
@@ -137,6 +133,10 @@ const MediaControls = (props: Props) => {
       return value ? fadeOutControls() : fadeInControls();
     });
   };
+
+  useEffect(() => {
+    fadeOutControls(fadeOutDelay);
+  }, []);
 
   return (
     <TouchableWithoutFeedback accessible={false} onPress={toggleControls}>
